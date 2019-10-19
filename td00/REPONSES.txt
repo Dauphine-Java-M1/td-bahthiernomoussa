@@ -1,0 +1,6 @@
+BAH Thierno Moussa.
+
+6. Le répertoire target contient deux dossiers:
+     1- classes
+     2- maven-status
+7.
