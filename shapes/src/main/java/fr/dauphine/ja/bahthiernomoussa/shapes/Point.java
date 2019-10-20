@@ -31,6 +31,13 @@ public class Point
 	public boolean isSameAs(Point p) {
 		return (this.x==p.x && this.y==p.y);
 	}
+	
+	// Exercice 4. Mutabilité et cercle
+	public void translate(double dx, double dy) {
+		
+		this.x += dx;
+		this.y += dy;
+	}
     public static void main( String[] args )
     {
         //System.out.println( "Hello World!" );
@@ -51,5 +58,6 @@ public class Point
         list.add(p1);
         System.out.println(list.indexOf(p2));
         System.out.println(list.indexOf(p3));
+       
     }
 }

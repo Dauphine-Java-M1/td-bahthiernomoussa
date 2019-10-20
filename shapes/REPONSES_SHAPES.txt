@@ -26,3 +26,6 @@ Exercice 2. Egalité
 1.5 affiche true
 1.6 affiche false
     En effet, le signe(==) utilisé par les objets retourne true si et seulement les 2 objets ont même référence.
+	
+3.7
+3.8 Le problème est du fait que les 2 objets (p1 et p2) occupent la même position dans la liste.
