@@ -9,8 +9,10 @@ import java.util.ArrayList;
 public class Point
 {
 	//Question 1
-	private double x,y;
+	private final double x,y;
 	static int nbre_points=0;
+	
+	
 	public double getX() {
 		return x;
 	}
@@ -26,17 +28,17 @@ public class Point
 	}
 	
 	public Point(Point p) {
-		p = new Point(this.x,this.y);
+		this(p.x,p.y);
 	}
+	
 	public boolean isSameAs(Point p) {
 		return (this.x==p.x && this.y==p.y);
 	}
 	
 	// Exercice 4. Mutabilité et cercle
-	public void translate(double dx, double dy) {
+	public Point translate(double  dx, double dy) {
 		
-		this.x += dx;
-		this.y += dy;
+		return new Point(x+dx,y+dy);
 	}
     public static void main( String[] args )
     {

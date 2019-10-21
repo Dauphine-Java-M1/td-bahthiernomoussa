@@ -30,7 +30,9 @@ Exercice 2. Egalité
 3.7
 3.8 Le problème est du fait que les 2 objets (p1 et p2) occupent la même position dans la liste.
 
-
+Exercice 4
+4.5 Le problème est du fait que les 2 cercles(c et c2) ont un même point avec la même référence.
+    Pour éviter ce problème, il faut affecter au centre du cercle en créant un nouvel objet de type Point.
 //Exercice 1. Graphiques D2
 1.5 Cette méthode sera appelée chaque fois que le composant aura besoin d'être redessiné.
 1.6 Le package java.awt contient les classes Container et FlowLayout tandis que javax.swing contient la classe JFrame.
