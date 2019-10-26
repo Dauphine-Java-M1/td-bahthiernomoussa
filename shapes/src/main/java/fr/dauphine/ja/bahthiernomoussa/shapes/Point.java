@@ -30,7 +30,9 @@ public class Point
 	public Point(Point p) {
 		this(p.x,p.y);
 	}
-	
+	public String toString() {
+		return this.x+","+this.y;
+	}
 	public boolean isSameAs(Point p) {
 		return (this.x==p.x && this.y==p.y);
 	}
@@ -39,6 +41,13 @@ public class Point
 	public Point translate(double  dx, double dy) {
 		
 		return new Point(x+dx,y+dy);
+	}
+	
+	// Distance entre 2 points
+	 public double distanceAB(Point p1, Point p2){
+		    
+	   double dist = (p2.getX()-p1.getX())*(p2.getX()-p1.getX()) + (p2.getY()-p1.getY())* (p2.getY()-p1.getY());
+	   return dist;
 	}
     public static void main( String[] args )
     {
@@ -60,6 +69,12 @@ public class Point
         list.add(p1);
         System.out.println(list.indexOf(p2));
         System.out.println(list.indexOf(p3));
+        
+        // Teste de la fonction distance.
+        Point a = new Point(1,5);
+        Point b = new Point(4,5);
+        
+        System.out.println("distance entre a et b "+a.distanceAB(a, b));
        
     }
 }

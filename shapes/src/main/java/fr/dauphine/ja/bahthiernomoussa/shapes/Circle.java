@@ -13,6 +13,9 @@ public class Circle {
 	  this.pCentre = new Point(pc.getX(),pc.getY());
   }
   
+  public double getRayon() {
+	  return this.rayon;
+  }
   public String toString() {
 	  return "cercle de centre ("+this.pCentre.getX()+","+this.pCentre.getY()+"), de rayon "+this.rayon+" et de surface: "+surface();
   }
@@ -26,9 +29,17 @@ public class Circle {
   }
   //Question 4.7
   public double surface() {
-	  return 3.14*rayon*rayon;
+	  return 3.14159*rayon*rayon;
+  }
+  
+  //Question 4.8
+  //Je suppose que le point doit être entièrement dans le cercle et non sur le cercle.
+  public boolean contains(Point p) {
+	  if(p.distanceAB(p, this.getCenter()) < this.getRayon()*this.getRayon()) return true;
+	  return false;
   }
   public static void main(String[] args) {
+	  //Quelques tests
 	  Point p = new Point(1,2);
 	  Circle c = new Circle(p,1);
 	  
@@ -41,5 +52,18 @@ public class Circle {
 	  Circle c3 = new Circle(new Point(1,2), 1);
 	   c3.getCenter().translate(1, 1);
 	  System.out.println(c3);
+	  //Question 4.8
+	  
+	  Point a = new Point(1,5);
+	  Point pc = new Point(4,5);
+	  Circle cr = new Circle(pc,3);
+	  
+	  System.out.println("le point a de coordonnées: "+a.toString());
+	  System.out.println("le point pc de coordonnées: "+pc.toString());
+	  System.out.println(cr);
+	  System.out.println(pc.distanceAB(a, cr.getCenter()));
+	  System.out.println(cr.contains(a));
+	  
+	  
   }
 }
