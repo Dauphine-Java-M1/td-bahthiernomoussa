@@ -38,6 +38,15 @@ public class Circle {
 	  if(p.distanceAB(p, this.getCenter()) < this.getRayon()*this.getRayon()) return true;
 	  return false;
   }
+  
+  //Question 4.9
+  //Ici, je suppose que j'ai un tableau de cercles.
+  public static boolean contains(Point p, Circle[] circles) {
+	  for(int i=0; i<circles.length; i++) {
+		  if(circles[i].contains(p)) return true;
+	  }
+	  return false;
+  }
   public static void main(String[] args) {
 	  //Quelques tests
 	  Point p = new Point(1,2);
@@ -63,6 +72,17 @@ public class Circle {
 	  System.out.println(cr);
 	  System.out.println(pc.distanceAB(a, cr.getCenter()));
 	  System.out.println(cr.contains(a));
+	  
+	  //Question 4.9
+	  
+	  Point b = new Point(10,15);
+	  Circle[] tc = new Circle[3];
+	  tc[0] = new Circle(p,1);
+	  tc[1] = new Circle(a,5);
+	  tc[2] = new Circle(b,2);
+	  
+	  System.out.println(Circle.contains(pc, tc));
+	  
 	  
 	  
   }

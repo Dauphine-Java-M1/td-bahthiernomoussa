@@ -33,6 +33,7 @@ Exercice 2. Egalité
 Exercice 4
 4.5 Le problème est du fait que les 2 cercles(c et c2) ont un même point avec la même référence.
     Pour éviter ce problème, il faut affecter au centre du cercle en créant un nouvel objet de type Point.
+4.9 Oui, on doit faire une méthode statique pour pouvoir faire la vérification à l'ensemble des points crées.
 //Exercice 1. Graphiques D2
 1.5 Cette méthode sera appelée chaque fois que le composant aura besoin d'être redessiné.
 1.6 Le package java.awt contient les classes Container et FlowLayout tandis que javax.swing contient la classe JFrame.
