@@ -37,3 +37,9 @@ Exercice 4
 //Exercice 1. Graphiques D2
 1.5 Cette méthode sera appelée chaque fois que le composant aura besoin d'être redessiné.
 1.6 Le package java.awt contient les classes Container et FlowLayout tandis que javax.swing contient la classe JFrame.
+
+//Exercice 5.
+5.1 Ici, il est intéressant de faire l'héritage(Circle) parce que un anneau est un cercle plus un rayon interne.
+5.4 Sans code suplémentaire, le problème est du fait que le rayon interne ne sera pas affiché.
+    Ensuite, c'est la méthode toString() de la classe Circle qui sera utilisée par défaut.
+    Pour le corriger, il faut rédefinir la méthode toString() dans la classe Ring.
