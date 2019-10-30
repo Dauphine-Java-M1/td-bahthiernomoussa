@@ -13,12 +13,23 @@ public class Ring extends Circle{
 	public double getRI() {
 		return this.ri;
 	}
-	public boolean equals(Ring r1, Ring r2) {
-		return r1==r2;
+	public boolean equals(Ring r) {
+		return (this.getCenter() == r.getCenter() && this.getRayon() == r.getRayon() && this.ri == r.ri);
 	}
 	
 	public String toString() {
 		return "anneau de centre ("+this.getCenter()+") de rayon "+this.getRayon()+" et de rayon interne "+this.getRI()+".";
+	}
+	
+	public boolean contains(Point p) {
+		return p.isSameAs(p);
+	}
+	
+	public boolean contains(Point p, Ring[] rings) {
+		for(int i=0; i<rings.length; i++) {
+			
+		}
+		return true;
 	}
 	public static void main(String[] args) {
 		

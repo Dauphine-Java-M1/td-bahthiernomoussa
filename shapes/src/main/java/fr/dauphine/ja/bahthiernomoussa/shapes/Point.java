@@ -30,9 +30,13 @@ public class Point
 	public Point(Point p) {
 		this(p.x,p.y);
 	}
+	
+	//Question 1.9
 	public String toString() {
 		return this.x+","+this.y;
 	}
+	
+	//Question 2.2
 	public boolean isSameAs(Point p) {
 		return (this.x==p.x && this.y==p.y);
 	}
@@ -54,8 +58,8 @@ public class Point
         //System.out.println( "Hello World!" );
         //Point p = new Point();
     	Point p = new Point(0,0);
-        System.out.println(p.x+","+p.y);
-        
+        //System.out.println(p.x+","+p.y);
+        System.out.println(p);
         //Exercice 2. Egalité
         Point p1 = new Point(1,2);
         Point p2 = p1;
@@ -65,10 +69,12 @@ public class Point
         System.out.println(p1==p2);
         System.out.println(p1==p3);
         
+        System.out.println("indexOf");
         ArrayList<Point> list = new ArrayList<>();
         list.add(p1);
         System.out.println(list.indexOf(p2));
         System.out.println(list.indexOf(p3));
+        System.out.println(list.indexOf(p1));
         
         // Teste de la fonction distance.
         Point a = new Point(1,5);
