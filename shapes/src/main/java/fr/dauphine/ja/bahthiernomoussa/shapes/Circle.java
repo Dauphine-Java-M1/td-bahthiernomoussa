@@ -47,12 +47,24 @@ public class Circle {
 	  }
 	  return false;
   }
+  
+  // Je définis cette fonction pour l'utiliser dans la classe Ring
+  public boolean equals(Circle c) {
+	  return this.rayon == c.rayon && this.pCentre.isSameAs(c.getCenter());
+  }
   public static void main(String[] args) {
 	  //Quelques tests
 	  Point p = new Point(1,2);
 	  Circle c = new Circle(p,1);
 	  
 	  Circle c2 = new Circle(p,2);
+	  Circle c4 = new Circle(p,1);
+	  // teste de la fonction equals
+	  System.out.println("---------------------------");
+	  System.out.println(c.equals(c2));
+	  System.out.println(c4.equals(c));
+	  System.out.println(c.equals(c4));
+	  System.out.println("---------------------------");
 	  c2.translate(1, 1);
 	  
 	  System.out.println(c+".\n"+c2);
@@ -66,12 +78,13 @@ public class Circle {
 	  Point a = new Point(1,5);
 	  Point pc = new Point(4,5);
 	  Circle cr = new Circle(pc,3);
-	  
+	  Point a1 = new Point(1,1); 
 	  System.out.println("le point a de coordonnées: "+a.toString());
 	  System.out.println("le point pc de coordonnées: "+pc.toString());
 	  System.out.println(cr);
 	  System.out.println(pc.distanceAB(a, cr.getCenter()));
 	  System.out.println(cr.contains(a));
+	  System.out.println(cr.contains(a1));
 	  
 	  //Question 4.9
 	  
