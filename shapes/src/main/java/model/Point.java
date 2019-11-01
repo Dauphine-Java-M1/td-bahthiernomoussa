@@ -1,4 +1,4 @@
-package fr.dauphine.ja.bahthiernomoussa.shapes;
+package model;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package fr.dauphine.ja.bahthiernomoussa.shapes;
+package model;
 
 //Exercice 5
 public class Ring extends Circle{

@@ -1,4 +1,6 @@
-package fr.dauphine.ja.bahthiernomoussa.shapes;
+package view;
+
+import model.Point;
 
 //Question 2
 public class TestPoint {
