@@ -4,6 +4,7 @@ import java.util.AbstractSequentialList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -24,9 +25,9 @@ public  class Mult{
 						return myLit.hasNext();
 					}
 					@Override
-					public void add(Integer e) {
+					public void add(Integer e) { // Ici, on empêche la modification
 						// TODO Auto-generated method stub
-						myLit.add(e);
+						throw new UnsupportedOperationException();
 					}
 					@Override
 					public boolean hasPrevious() {
@@ -41,12 +42,12 @@ public  class Mult{
 					@Override
 					public Integer previous() {
 						// TODO Auto-generated method stub
-						return null;
+						return myLit.previous();
 					}
 					@Override
 					public int previousIndex() {
 						// TODO Auto-generated method stub
-						return 0;
+						return myLit.previousIndex();
 					}
 					@Override
 					public void remove() {
@@ -74,18 +75,36 @@ public  class Mult{
 	
 	public static void main(String[] args) {
 		// Tester la fonction mult
-		List<Integer> li = Arrays.asList(1,2,3,4);
+		ArrayList<Integer> al = new ArrayList<>();
 		
-		List<Integer> lii = new ArrayList<>();
-		
-		lii = mult(3,li);
-		
-		for(Integer i:lii) {
-			System.out.println(i);
+		for(int i=0; i<1000000; i++) {
+			al.add(i);
 		}
 		
+		long t0 = System.nanoTime();
+		List<Integer> ret = Mult.mult(2, al);
+		long sum=0;
 		
+		for(int val : ret) {
+			sum +=val/2;
+		}
+		System.out.println(System.nanoTime() - t0);
 		
+		LinkedList<Integer> ll = new LinkedList<>();
+		for(int i=0; i<1000000; i++) {
+			ll.add(i);
+		}
+		
+		t0 = System.nanoTime();
+		sum=0;
+		
+		ret=Mult.mult(2, ll);
+		
+		for(int val : ret) {
+			sum +=val/2;
+		}
+		
+		System.out.println(System.nanoTime() - t0);
 	}
 
 }
