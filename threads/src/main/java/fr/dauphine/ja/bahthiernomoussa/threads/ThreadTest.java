@@ -1,52 +1,33 @@
 package fr.dauphine.ja.bahthiernomoussa.threads;
 
-<<<<<<< HEAD
 public class ThreadTest {
+	
+	public static int n=0;
+	private final Object monitor = new Object();
 	
 	public Runnable count(final int id) {
 		
 		Runnable r = new Runnable() {
 			public void run() {
-				for(int i=0; i<10000; i++) {
-					System.out.println("Je suis le thread "+id);
+				while(n<10000) {
+					
+					synchronized (monitor) {
+						System.out.println("Je suis le thread "+id+" et j'effectue l'iteration "+(n+1));
+						n++;
+					}
 				}
 			}
 		};
 		return r;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException{
 		ThreadTest tt = new ThreadTest();
 		
 		Thread t1 = new Thread(tt.count(1));
 		Thread t2 = new Thread(tt.count(2));
 		
 		t1.start(); t2.start();
+		t1.join(); t2.join();
 	}
-
-=======
-
-public class ThreadTest 
-{
-	public void compteur(int id) {
-		for(int i=0; i<10000; i++) {
-			System.out.println("Je suis le thread "+id);
-		}
-		
-	}
-    public static void main( String[] args ) {
-    	ThreadTest test = new ThreadTest();
-    	
-    	Runnable runnable = new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				test.compteur(1);
-			}
-    		
-    	};
-        
-    }
->>>>>>> 82f29f44c1e2fd0d3f1167a0b4702da36f586a60
 }
